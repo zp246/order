@@ -1,0 +1,208 @@
+@charset "utf-8";
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    background:white;
+    color: #262626;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    margin:0;
+    padding:0;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea {
+    font-family: Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+}
+input,select,textarea {
+    font-size:100%;
+    vertical-align: middle;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+    text-align:inherit;
+}
+/* 去除默认边框 */
+fieldset,img {
+    border:none;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display:block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym {
+    border:none;
+    font-variant:normal;
+}
+/* 一致的 del 样式 */
+del {
+    text-decoration:line-through;
+}
+address,caption,cite,code,dfn,em,th,var {
+    font-style:normal;
+    font-weight:500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,ul {
+    list-style:none;
+}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,th {
+    text-align:left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:500;
+}
+q:before,q:after {
+    content:'';
+}
+/* 统一上标和下标 */
+sub,sup {
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline;
+}
+sup {
+    top:-0.5em;
+}
+sub {
+    bottom:-0.25em;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+    text-decoration:none;
+    color: #333;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,*:focus {
+    outline:none;
+}
+/* 清除浮动 */
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+    overflow:hidden;
+}
+.clearfix {
+    zoom:1; /* for ie6 & ie7 */
+}
+.clear {
+    clear:both;
+    display:block;
+    font-size:0;
+    height:0;
+    line-height:0;
+    overflow:hidden;
+}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+    display:none;
+}
+.block {
+    display:block;
+}
+/* 设置浮动，减少浮动带来的 bug */
+.fl,.fr {
+    display:inline;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 227607 */
+  src: url('//at.alicdn.com/t/font_6bz2w6biy6jkbj4i.eot');
+  src: url('//at.alicdn.com/t/font_6bz2w6biy6jkbj4i.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_6bz2w6biy6jkbj4i.woff') format('woff'),
+  url('//at.alicdn.com/t/font_6bz2w6biy6jkbj4i.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_6bz2w6biy6jkbj4i.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*公共样式*/
+.weui-cells.weui-notop {
+    margin-top: 0;
+}
+.weui-cell.weui-noleft:before {
+    left: 0;
+}
+.weui-full {
+  width: 100%;
+}
+.division {
+    width: 100%;
+    height: .5rem;
+    background: #f7f7f7;
+}
+.division1 {
+    padding: 8px 15px;
+    font-size: 12px;
+    background: #f7f7f7;
+    color: #aaa;
+}
+.padding-r8 {
+  padding-right: 10px;
+}
+.padding-r20 {
+  padding-right: 20px;
+}
+.font-l10 {
+  margin-left: 10px;
+}
+.font-gray {
+  color: #a5a5a5;
+}
+.weui-label.font-black {
+  color: #292929;
+}
+.font-pink {
+  color:#ff6b6e;
+}
+.font-red {
+  color: #ff5858;
+}
+.font-blue {
+  color: #6ab7ff;
+}
+.font-through {
+  text-decoration:line-through;
+}
+.font-orange {
+  color: #ff6b32;
+}
+.font-black {
+  color: #333;
+}
+.padding-15 {
+  padding: 0 15px;
+}
+.mt-2 {
+  margin-top: .5rem;
+}
